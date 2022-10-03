@@ -426,8 +426,7 @@ spec:
         {{- $isVolumeOfThisComponent := false }}
         {{- range $containerIndex, $container := $.Values.containers }}
           {{- range $volumeMountIndex, $volumeMount := $container.volumeMounts }}
-            {{- if or $volumeMount.volume.readOnly $volumeMount.volume.shared $volume.secret $volume.configMap $volume.emptyDir (hasKey $volume "hostPath")}}
-              {{- if eq $volume.name $volumeMount.volume.name }}
+            {{- if or $volumeMount.volume.readOnly $volumeMount.volume.shared $volume.secret $volume.configMap (hasKey $volume "emptyDir") $volume.hostPath}}              {{- if eq $volume.name $volumeMount.volume.name }}
                 {{- $isVolumeOfThisComponent = true }}
               {{- end }}
             {{- end }}
@@ -443,10 +442,10 @@ spec:
           configMap:
 {{ toYaml $volume.configMap | indent 12 }}
           {{- else }}
-          {{- if $volume.emptyDir }}
+          {{- if hasKey $volume "emptyDir" }}
           emptyDir:
 {{ toYaml $volume.emptyDir | indent 12 }}
-          {{- if hasKey $volume "hostPath" }}
+          {{- if $volume.hostPath }}
           hostPath:
 {{ toYaml $volume.hostPath | indent 12 }}
           {{- else }}
@@ -460,7 +459,7 @@ spec:
         {{- end }}
   volumeClaimTemplates:
     {{- range $volumeIndex, $volume := $.Values.volumes }}
-    {{- if or $volume.secret $volume.configMap $volume.emptyDir (hasKey $volume "hostPath")  }}
+    {{- if or $volume.secret $volume.configMap (hasKey $volume "emptyDir") $volume.hostPath }}
     {{- else }}
     {{- $isVolumeTemplateOfThisComponent := false }}
     {{- range $containerIndex, $container := $.Values.containers }}
