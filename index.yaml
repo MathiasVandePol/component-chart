@@ -1,0 +1,12 @@
+apiVersion: v1
+entries:
+  component-chart:
+  - apiVersion: v2
+    created: "2022-10-03T20:42:50.37931+02:00"
+    description: A general purpose helm chart for deploying components of an application
+    digest: 40961d82868608af0d038cd1ed45d080f2c0ab5f8a20eab360adaee37c81b8e2
+    name: component-chart
+    urls:
+    - https://mathiasvandepol.github.io/component-chart/component-chart-0.0.0.tgz
+    version: 0.0.0
+generated: "2022-10-03T20:42:50.378593+02:00"
