@@ -2,7 +2,15 @@ apiVersion: v1
 entries:
   component-chart:
   - apiVersion: v2
-    created: "2022-10-03T20:49:45.472795+02:00"
+    created: "2022-10-03T20:54:14.983574+02:00"
+    description: A general purpose helm chart for deploying components of an application
+    digest: bd4b3a3b12c18ab402651c64f810113a13229dcb3727c4cd14f094ba90de5d84
+    name: component-chart
+    urls:
+    - https://mathiasvandepol.github.io/component-chart/component-chart-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
+    created: "2022-10-03T20:54:14.982937+02:00"
     description: A general purpose helm chart for deploying components of an application
     digest: fffdf963db53d78a525e57b366d119a065313ae96f186cb77c6168df6ae8e081
     name: component-chart
@@ -10,11 +18,11 @@ entries:
     - https://mathiasvandepol.github.io/component-chart/component-chart-0.0.1.tgz
     version: 0.0.1
   - apiVersion: v2
-    created: "2022-10-03T20:49:45.472233+02:00"
+    created: "2022-10-03T20:54:14.982439+02:00"
     description: A general purpose helm chart for deploying components of an application
     digest: 40961d82868608af0d038cd1ed45d080f2c0ab5f8a20eab360adaee37c81b8e2
     name: component-chart
     urls:
     - https://mathiasvandepol.github.io/component-chart/component-chart-0.0.0.tgz
     version: 0.0.0
-generated: "2022-10-03T20:49:45.471528+02:00"
+generated: "2022-10-03T20:54:14.979964+02:00"

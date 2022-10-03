@@ -426,7 +426,7 @@ spec:
         {{- $isVolumeOfThisComponent := false }}
         {{- range $containerIndex, $container := $.Values.containers }}
           {{- range $volumeMountIndex, $volumeMount := $container.volumeMounts }}
-            {{- if or $volumeMount.volume.readOnly $volumeMount.volume.shared $volume.secret $volume.configMap (hasKey $volume "emptyDir") }}
+            {{- if or $volumeMount.volume.readOnly $volumeMount.volume.shared $volume.secret $volume.configMap (hasKey $volume "emptyDir") (hasKey $volume "hostPath")}}
               {{- if eq $volume.name $volumeMount.volume.name }}
                 {{- $isVolumeOfThisComponent = true }}
               {{- end }}
