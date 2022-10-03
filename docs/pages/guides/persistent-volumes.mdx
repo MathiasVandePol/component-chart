@@ -99,6 +99,16 @@ volumes:
     secretName: my-secret
 ```
 
+### HostPath Volumes
+Using DevSpace components, you can define your Node's filesystem as volumes according to the [Kubernetes HostPath specification](https://kubernetes.io/docs/concepts/storage/volumes/#hostpath):
+```yaml
+volumes:
+- name: secret-token
+  hostPath:
+    secretName: my-secret
+```
+
+
 <details>
 <summary>Show specification for Secret Volumes</summary>
 
