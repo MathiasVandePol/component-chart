@@ -446,6 +446,9 @@ spec:
           {{- if hasKey $volume "emptyDir" }}
           emptyDir:
 {{ toYaml $volume.emptyDir | indent 12 }}
+          {{- if hasKey $volume "hostPath" }}
+          hostPath:
+{{ toYaml $volume.hostPath | indent 12 }}
           {{- else }}
           persistentVolumeClaim:
             claimName: {{ $volume.name | quote }}
